@@ -2,6 +2,7 @@ package util
 
 import (
 	"database/sql"
+	"fmt"
 	"math/rand"
 	"strings"
 	"time"
@@ -39,7 +40,7 @@ func RandomMoney() int64 {
 }
 
 func RandomCurrency() string {
-	currencies := []string{"EUR", "USD", "CAD"}
+	currencies := []string{USD, EUR, CAD}
 	n := len(currencies)
 	return currencies[rand.Intn(n)]
 }
@@ -54,4 +55,8 @@ func GetRandomAccountId(db *sql.DB) (int64, error) {
 		return 0, err
 	}
 	return accountID, nil
+}
+
+func RandomEmail() string {
+	return fmt.Sprintf("%s@email.com", RandomString(6))
 }
