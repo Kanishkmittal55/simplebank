@@ -46,4 +46,10 @@ enter_into_psql:
 simplebankcont:
 	 docker run --name simplebank --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:secret@08346868a80d:5432/simple_bank?sslmode=disable" simplebank:latest
 
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc server mock migrateup1 migratedown1 simplebankcont
+runapi:
+	docker compose up
+
+shutdownapi:
+	docker compose down
+
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc server mock migrateup1 migratedown1 simplebankcont runapi shutdownapi
