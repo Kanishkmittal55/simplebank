@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build  # Ensure that this job runs after the build job
     steps:
+      - name: Checkout Code into the Go Module directory
+        uses: actions/checkout@v3
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -49,3 +52,4 @@ jobs:
             # Path to ec2-init.sh
             chmod +x /home/ec2-user/simplebank/.github/workflows/ec2-init.sh
             /home/ec2-user/simplebank/.github/workflows/ec2-init.sh
+
