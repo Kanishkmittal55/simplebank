@@ -81,8 +81,8 @@ jobs:
               sudo systemctl start simplebank.service
 
               # Wait for 5 minutes
-              echo "Waiting for 3 minutes for the service to stabilize..."
-              sleep 180
+              echo "Waiting for 2 minutes for the service to stabilize..."
+              sleep 120
 
               # Fetch and print the logs for the simplebank service
               echo "Fetching service logs..."
