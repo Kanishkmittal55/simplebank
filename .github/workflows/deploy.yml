@@ -47,7 +47,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_PRIVATE_SSH_KEY }}
-          script:|
+          script: |
             #!/bin/bash
             # Path to ec2-init.sh
             chmod +x /home/ec2-user/simplebank/.github/workflows/ec2-init.sh
