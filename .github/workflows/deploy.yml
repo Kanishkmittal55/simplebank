@@ -80,6 +80,10 @@ jobs:
               # The systemd service will handle this
               sudo systemctl start simplebank.service
 
+              # Wait for 5 minutes
+              echo "Waiting for 5 minutes for the service to stabilize..."
+              sleep 300
+
               # Fetch and print the logs for the simplebank service
               echo "Fetching service logs..."
               LOGS=$(sudo journalctl -u simplebank.service --since "3 minutes ago")
