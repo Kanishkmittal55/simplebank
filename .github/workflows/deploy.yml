@@ -72,6 +72,9 @@ jobs:
             
               # Remove all unused images, not just dangling ones
               docker image prune -a -f
+
+              # Fetch the secret values and transform them into the env file format
+              aws secretsmanager get-secret-value --secret-id simple_bank --query SecretString --output text | jq -r 'to_entries|map("\(.key)=\(.value)")|.[]' > app.env
             
               # Rebuild and restart the Docker containers
               # The systemd service will handle this
