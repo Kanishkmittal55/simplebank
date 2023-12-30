@@ -6,6 +6,6 @@ import "time"
 // The idea is to make a general token maker interface
 // to manage the creation and verification for the tokens.
 type Maker interface {
-	CreateToken(username string, duration time.Duration) (string, error)
+	CreateToken(username string, duration time.Duration) (string, *Payload, error)
 	VerifyToken(token string) (*Payload, error)
 }

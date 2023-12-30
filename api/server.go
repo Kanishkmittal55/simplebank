@@ -42,6 +42,8 @@ func NewServer(config util.Config, store db.Store) (*Server, error) {
 
 func (server *Server) setupRouter() {
 	router := gin.Default()
+	// Allowing CORS Request ( TODO: Further Tweaking Required )
+	router.Use(CORSMiddleware())
 
 	// Landing Page
 	router.GET("/landing/:key", server.getLandingPage)
@@ -49,6 +51,7 @@ func (server *Server) setupRouter() {
 	// Routes for Users ( No Login Required , because we want everyone to freely create an account on our server
 	router.POST("/users", server.createUser)
 	router.POST("/users/login", server.loginUser)
+	router.POST("/token/renew_access", server.renewAccessToken)
 
 	authRoute := router.Group("/").Use(authMiddleware(server.tokenMaker))
 
