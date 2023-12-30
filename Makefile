@@ -60,7 +60,6 @@ enter_into_psql:
 simplebankcont:
 	 docker run --name simplebank --network bank-network -p 8080:8080 -e GIN_MODE=release -e DB_SOURCE="postgresql://root:secret@08346868a80d:5432/simple_bank?sslmode=disable" simplebank:latest
 
-
 # For adding an endpoint with one or many new tables added in the database
 # 1. We add the migration up and down files...
 # Example Usage - make migratefiles DIR=your_directory NAME=your_migration_name , DIR is defaulted to db/migration
