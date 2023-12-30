@@ -79,5 +79,10 @@ jobs:
               # Rebuild and restart the Docker containers
               # The systemd service will handle this
               sudo systemctl start simplebank.service
+
+              # Fetch and print the logs for the simplebank service
+              echo "Fetching service logs..."
+              LOGS=$(sudo journalctl -u simplebank.service --since "3 minutes ago")
+              echo "$LOGS"
             fi
 
