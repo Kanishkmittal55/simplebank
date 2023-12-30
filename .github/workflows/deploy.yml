@@ -9,7 +9,6 @@ jobs:
   deploy:
     name: Deploy to EC2
     runs-on: ubuntu-latest
-    needs: build  # Ensure that this job runs after the build job
     steps:
       - name: Checkout Code into the Go Module directory
         uses: actions/checkout@v3
