@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package pb;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/kanishkmittal55/simplebank/pb";
+
+message User {
+    string access_token = 1;
+    string username = 2;
+    string full_name = 3;
+    string email = 4;
+    google.protobuf.Timestamp password_changed_at = 5;
+    google.protobuf.Timestamp created_at = 6;
+}
