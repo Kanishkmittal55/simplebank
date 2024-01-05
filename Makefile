@@ -15,6 +15,8 @@ down:
 	docker-compose -f $(COMPOSE_FILE) down --rmi all --volumes
 	@echo "Containers, networks, volumes, and images removed successfully."
 
+startdb: postgres createdb migrateup
+
 postgres:
 	docker run --name postgres12 --network bank-network -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:12-alpine
 
@@ -76,10 +78,11 @@ proto:
 	rm -f pb/*.go
 	protoc --proto_path=proto --go_out=pb --go_opt=paths=source_relative \
     --go-grpc_out=pb --go-grpc_opt=paths=source_relative \
+    --grpc-gateway_out=pb --grpc-gateway_opt=paths=source_relative \
     proto/*.proto
 
 evans:
 	evans --host localhost --port 8080 --reflection --package pb --service simplebank
 
 
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc server mock migrateup1 migratedown1 simplebankcont down up db_docs proto evans
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc server mock migrateup1 migratedown1 simplebankcont down up db_docs proto evans startdb

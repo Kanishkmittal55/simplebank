@@ -19,7 +19,6 @@ type createUserRequest struct {
 }
 
 type UserResponse struct {
-	AccessToken      string    `json:"access_Token"`
 	Username         string    `json:"username"`
 	FullName         string    `json:"full_name"`
 	Email            string    `json:"email"`
@@ -27,16 +26,16 @@ type UserResponse struct {
 	CreatedAt        time.Time `json:"created_at"`
 }
 
-func newUserResponse(user db.User, accessToken string) UserResponse {
-	return UserResponse{
-		AccessToken:      accessToken,
-		Username:         user.Username,
-		FullName:         user.FullName,
-		Email:            user.Email,
-		CreatedAt:        user.CreatedAt,
-		PasswordChangeAt: user.PasswordChangeAt,
-	}
-}
+//func newUserResponse(user db.User, accessToken string) UserResponse {
+//	return UserResponse{
+//		AccessToken:      accessToken,
+//		Username:         user.Username,
+//		FullName:         user.FullName,
+//		Email:            user.Email,
+//		CreatedAt:        user.CreatedAt,
+//		PasswordChangeAt: user.PasswordChangeAt,
+//	}
+//}
 
 func (server *Server) createUser(ctx *gin.Context) {
 	var req createUserRequest
@@ -72,16 +71,23 @@ func (server *Server) createUser(ctx *gin.Context) {
 		return
 	}
 
-	accessToken, _, err := server.tokenMaker.CreateToken(
-		user.Username,
-		server.config.AccessTokenDuration,
-	)
+	//// So we are also adding an access Token
+	//accessToken, _, err := server.tokenMaker.CreateToken(
+	//	user.Username,
+	//	server.config.AccessTokenDuration,
+	//)
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
 		return
 	}
 
-	rsp := newUserResponse(user, accessToken)
+	rsp := UserResponse{
+		Username:         user.Username,
+		FullName:         user.FullName,
+		Email:            user.Email,
+		PasswordChangeAt: user.PasswordChangeAt,
+		CreatedAt:        user.CreatedAt,
+	}
 
 	ctx.JSON(http.StatusOK, rsp)
 
@@ -118,11 +124,12 @@ type LoginUserRequest struct {
 }
 
 type LoginUserResponse struct {
-	SessionID             uuid.UUID    `json:"session_id"`
-	User                  UserResponse `json:"user"`
-	AccessTokenExpiresAt  time.Time    `json:"access_token_expires_at"`
-	RefreshToken          string       `json:"refresh_token"`
-	RefreshTokenExpiresAt time.Time    `json:"refresh_token_expires_at"`
+	AccessToken           string    `json:"access_token"`
+	SessionID             uuid.UUID `json:"session_id"`
+	User                  db.User   `json:"user"`
+	AccessTokenExpiresAt  time.Time `json:"access_token_expires_at"`
+	RefreshToken          string    `json:"refresh_token"`
+	RefreshTokenExpiresAt time.Time `json:"refresh_token_expires_at"`
 }
 
 func (server *Server) loginUser(ctx *gin.Context) {
@@ -186,8 +193,50 @@ func (server *Server) loginUser(ctx *gin.Context) {
 		AccessTokenExpiresAt:  accessPayload.ExpiredAt,
 		RefreshToken:          refreshToken,
 		RefreshTokenExpiresAt: refreshPayload.ExpiredAt,
-		User:                  newUserResponse(user, accessToken),
+		AccessToken:           accessToken,
+		User:                  user,
 	}
 	ctx.JSON(http.StatusOK, rsp)
 
+}
+
+type LogoutUserRequest struct {
+	SessionID uuid.UUID `json:"session_id" binding:"required"`
+}
+
+type LogoutUserResponse struct {
+	Message string `json:"message"`
+	User    string `json:"user"`
+}
+
+func (server *Server) logoutUser(ctx *gin.Context) {
+	var req LogoutUserRequest
+	if err := ctx.ShouldBindJSON(&req); err != nil {
+		ctx.JSON(http.StatusBadRequest, errorResponse(err))
+		return
+	}
+
+	// Retrieve session details by session ID
+	session, err := server.store.GetSession(ctx, req.SessionID)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			ctx.JSON(http.StatusNotFound, errorResponse(err))
+			return
+		}
+		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
+	}
+
+	// Invalidate the session by setting is_blocked to true
+	err = server.store.InvalidateSession(ctx, session.ID)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
+	}
+
+	rsp := LogoutUserResponse{
+		Message: "Successfully logged out from your session",
+		User:    session.Username,
+	}
+	ctx.JSON(http.StatusOK, rsp)
 }

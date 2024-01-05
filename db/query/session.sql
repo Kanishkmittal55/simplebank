@@ -14,3 +14,8 @@ INSERT INTO sessions (
 -- name: GetSession :one
 SELECT * FROM sessions
 WHERE id = $1 LIMIT 1;
+
+-- name: InvalidateSession :exec
+UPDATE sessions
+SET is_blocked = TRUE
+WHERE id = $1;
