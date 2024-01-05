@@ -61,6 +61,7 @@ func (server *Server) setupRouter() {
 	authRoute.GET("/accounts", server.ListAccount)
 	authRoute.PUT("/accounts/:id", server.UpdateAccountById)
 	authRoute.DELETE("/accounts/:id", server.deleteAccount)
+	authRoute.DELETE("/users/logout", server.logoutUser)
 
 	// Routes for Transfer
 	authRoute.POST("/transfers", server.createTransfer)

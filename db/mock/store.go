@@ -276,6 +276,20 @@ func (mr *MockStoreMockRecorder) GetUser(arg0, arg1 interface{}) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetUser", reflect.TypeOf((*MockStore)(nil).GetUser), arg0, arg1)
 }
 
+// InvalidateSession mocks base method.
+func (m *MockStore) InvalidateSession(arg0 context.Context, arg1 uuid.UUID) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "InvalidateSession", arg0, arg1)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// InvalidateSession indicates an expected call of InvalidateSession.
+func (mr *MockStoreMockRecorder) InvalidateSession(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "InvalidateSession", reflect.TypeOf((*MockStore)(nil).InvalidateSession), arg0, arg1)
+}
+
 // ListAccounts mocks base method.
 func (m *MockStore) ListAccounts(arg0 context.Context, arg1 db.ListAccountsParams) ([]db.Account, error) {
 	m.ctrl.T.Helper()
