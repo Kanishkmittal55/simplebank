@@ -2,13 +2,14 @@ package api
 
 import (
 	"database/sql"
+	"net/http"
+	"time"
+
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	db "github.com/kanishkmittal55/simplebank/db/sqlc"
 	"github.com/kanishkmittal55/simplebank/db/util"
 	"github.com/lib/pq"
-	"net/http"
-	"time"
 )
 
 type createUserRequest struct {
@@ -201,7 +202,7 @@ func (server *Server) loginUser(ctx *gin.Context) {
 }
 
 type LogoutUserRequest struct {
-	SessionID uuid.UUID `json:"session_id" binding:"required"`
+	SessionID string `json:"session_id" binding:"required"`
 }
 
 type LogoutUserResponse struct {
@@ -217,7 +218,8 @@ func (server *Server) logoutUser(ctx *gin.Context) {
 	}
 
 	// Retrieve session details by session ID
-	session, err := server.store.GetSession(ctx, req.SessionID)
+	uid := uuid.MustParse(req.SessionID)
+	session, err := server.store.GetSession(ctx, uid)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			ctx.JSON(http.StatusNotFound, errorResponse(err))

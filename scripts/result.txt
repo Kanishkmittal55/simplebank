@@ -1,0 +1,730 @@
+Summary for ../../docs/advanceRate/dynamicAdvanceRate.md:
+Dynamic Advance Rate (DARO) is a risk calculation method that uses trust scores and gross earnings to update the advance rate of a user's provider account, with plans to eventually move to a new table that includes advance rate information by pay period/provider account.
+
+Summary for ../../docs/api/clients/ruby/README.md:
+This document provides information about the DailyLedger Ruby gem, including installation instructions and API endpoints for viewing server configurations, retrieving available balances, managing earnings, and transferring funds.
+
+Summary for ../../docs/api/clients/ruby/docs/AdminApi.md:
+This document provides an overview of the AdminApi endpoints, including get_config, get_pay_periods_with_possible_balance, get_status, get_users_with_possible_balance, and patch_maintenance_mode.
+
+Summary for ../../docs/api/clients/ruby/docs/AdvanceRate.md:
+The DailyLedger::AdvanceRate class represents specific pay period advance rate related to earnings type, with properties including pay_period_id, advance_rate, and earnings_type.
+
+Summary for ../../docs/api/clients/ruby/docs/AdvanceRates.md:
+This document describes how to use the `DailyLedger::AdvanceRates` class in the DailyLedger library to set advance rates for a ledger.
+
+Summary for ../../docs/api/clients/ruby/docs/AdvanceRatesApi.md:
+This document describes the methods and endpoints of the DailyLedger AdvanceRatesApi, including v1_get_advance_rates and v1_put_advance_rates.
+
+Summary for ../../docs/api/clients/ruby/docs/AvailableBalance.md:
+This document provides a class definition for `DailyLedger::AvailableBalance` which represents the available balance in a user's wallet and includes properties such as user_id, cents, currency_iso, and details.
+
+Summary for ../../docs/api/clients/ruby/docs/AvailableBalanceApi.md:
+The DailyLedger::AvailableBalanceApi provides methods to retrieve available balance, available balance by pay period, and the event that last updated the user's available balance.
+
+Summary for ../../docs/api/clients/ruby/docs/AvailableBalanceDetails.md:
+This document is a code example in Ruby that demonstrates the usage of the DailyLedger::AvailableBalanceDetails class, including its properties and their types.
+
+Summary for ../../docs/api/clients/ruby/docs/AvailableBalanceLastUpdated.md:
+The DailyLedger::AvailableBalanceLastUpdated class is used to store information about the last event that updated a user's available balance, including the event ID, type, and timestamp.
+
+Summary for ../../docs/api/clients/ruby/docs/EarningsApi.md:
+It is still to do because text was too long to analyze
+
+Summary for ../../docs/api/clients/ruby/docs/EarningsExclusion.md:
+This document describes the properties and example usage of DailyLedger::EarningsExclusion, which is a Ruby class used for calculating earnings exclusions based on various maximum limits.
+
+Summary for ../../docs/api/clients/ruby/docs/EarningsExclusionsApi.md:
+This document describes the API endpoints to get and update earnings exclusions in DailyLedger.
+
+Summary for ../../docs/api/clients/ruby/docs/EarningsFluctuation.md:
+A DailyLedger::EarningsFluctuation object consists of properties such as user_id, time_detected, fluctuation_amount_cents, fluctuation_amount_currency, and pay_period_id.
+
+Summary for ../../docs/api/clients/ruby/docs/EarningsFluctuations.md:
+DailyLedger::EarningsFluctuations is a Ruby class that represents a list of earnings fluctuations and can be initialized with an optional array of earnings fluctuations.
+
+Summary for ../../docs/api/clients/ruby/docs/EarningsJob.md:
+The DailyLedger::EarningsJob class represents a job for managing earnings with properties like job_id, entries_submitted, and entries_saved.
+
+Summary for ../../docs/api/clients/ruby/docs/EarningsSalaried.md:
+This document describes the properties and an example code for the DailyLedger::EarningsSalaried class, which includes the pay_period_id, total_amount_cents, and total_amount_currency.
+
+Summary for ../../docs/api/clients/ruby/docs/EarningsType.md:
+This document describes the properties and example usage of the EarningsType class in the DailyLedger library.
+
+Summary for ../../docs/api/clients/ruby/docs/ErrorResponse.md:
+This document describes the properties and example usage of the `DailyLedger::ErrorResponse` class, which includes an `error` property and an example Ruby code snippet.
+
+Summary for ../../docs/api/clients/ruby/docs/FirstTransfer.md:
+The `FirstTransfer` class in `DailyLedger` represents a transfer with a `created_at` timestamp and has a `created_at` property that can be set to `null` in an example code snippet.
+
+Summary for ../../docs/api/clients/ruby/docs/GrossEarningBulkMetadata.md:
+The DailyLedger::GrossEarningBulkMetadata class is used to store metadata for gross earnings, including the pay period ID and provider account ID.
+
+Summary for ../../docs/api/clients/ruby/docs/GrossEarningBulkMetadataList.md:
+This document outlines the properties and example usage of the `GrossEarningBulkMetadataList` class in the `DailyLedger` library.
+
+Summary for ../../docs/api/clients/ruby/docs/GrossEarningMetadata.md:
+This document provides the properties and descriptions for the DailyLedger GrossEarningMetadata class, which includes information such as the unique identifier, total amount, currency, hours worked, and status of gross earnings.
+
+Summary for ../../docs/api/clients/ruby/docs/GrossEarningsEntryV1.md:
+This document provides the properties and an example of using DailyLedger's GrossEarningsEntryV1 class to create gross earnings entries.
+
+Summary for ../../docs/api/clients/ruby/docs/GrossEarningsEntryV2.md:
+This document describes the properties and example usage of the DailyLedger::GrossEarningsEntryV2 class, including information such as pay group, gross earnings identifier, job date, job started at, job pay period end, job hours, and job earnings.
+
+Summary for ../../docs/api/clients/ruby/docs/GrossEarningsJobStatus.md:
+This document provides the properties and an example usage of the DailyLedger::GrossEarningsJobStatus class, which represents the status of a gross earnings job.
+
+Summary for ../../docs/api/clients/ruby/docs/GrossEarningsShiftsPayloadV1.md:
+This document describes the properties and example usage of the DailyLedger::GrossEarningsShiftsPayloadV1 class, which includes information such as shifts_list, pay_period_id, provider_account_id, and job_id.
+
+Summary for ../../docs/api/clients/ruby/docs/NetEarningsListV1.md:
+The DailyLedger::NetEarningsListV1 class represents a list of net earnings, with an example usage in Ruby.
+
+Summary for ../../docs/api/clients/ruby/docs/NetEarningsV1.md:
+`DailyLedger::NetEarningsV1` represents net earnings information including currency, pay date, gross pay, remainder pay, net pay, pay period ID, and company pay period ID.
+
+Summary for ../../docs/api/clients/ruby/docs/NotFoundErrorResponse.md:
+The DailyLedger::NotFoundErrorResponse class represents an error response with an error message and a flag indicating if the resource requested was positively identified as not existing by the API.
+
+Summary for ../../docs/api/clients/ruby/docs/PatchMaintenanceModeRequest.md:
+This document provides information on the properties and example usage of the DailyLedger::PatchMaintenanceModeRequest class, which is used to activate or deactivate maintenance mode for different APIs in the DailyLedger system.
+
+Summary for ../../docs/api/clients/ruby/docs/PayPeriodAvailableBalance.md:
+This document describes the properties and example usage of the DailyLedger::PayPeriodAvailableBalance class.
+
+Summary for ../../docs/api/clients/ruby/docs/PayPeriodIds.md:
+This document explains the properties of the DailyLedger PayPeriodIds class and provides an example of how to use it in Ruby code.
+
+Summary for ../../docs/api/clients/ruby/docs/ServerConfig.md:
+DailyLedger::ServerConfig is a class that represents the server configuration and feature flags, with properties for config and featureflags.
+
+Summary for ../../docs/api/clients/ruby/docs/ServerConfigConfig.md:
+This document provides the properties and an example code for configuring the server of DailyLedger.
+
+Summary for ../../docs/api/clients/ruby/docs/ServerConfigFeatureflags.md:
+This document describes the properties and example usage of the DailyLedger::ServerConfigFeatureflags class.
+
+Summary for ../../docs/api/clients/ruby/docs/ServerStatus.md:
+The `DailyLedger::ServerStatus` class defines properties for checking the server's running status and accessibility to various postgres databases.
+
+Summary for ../../docs/api/clients/ruby/docs/ShiftV1.md:
+This document provides the properties and an example code snippet for the DailyLedger ShiftV1 class, including details such as external ID, job date, job earnings, job hours, pay group, and more.
+
+Summary for ../../docs/api/clients/ruby/docs/ShiftV2.md:
+This document describes the properties and example usage of the DailyLedger::ShiftV2 class, including its currency, date, earnings, excluded reason, hours, pay period ID, and company pay period ID.
+
+Summary for ../../docs/api/clients/ruby/docs/ShiftsListV1.md:
+This document describes the properties and example usage of the DailyLedger::ShiftsListV1 class, including the shifts property which is an optional array of ShiftV1 objects.
+
+Summary for ../../docs/api/clients/ruby/docs/ShiftsListV2.md:
+This document provides an example of using the DailyLedger::ShiftsListV2 class in Ruby to initialize an instance with null shifts.
+
+Summary for ../../docs/api/clients/ruby/docs/TipV1.md:
+This document describes the properties and example usage of the DailyLedger::TipV1 class, which represents a tip entry in a daily ledger system, including various optional attributes such as external_id, date, earnings, currency, and pay period details.
+
+Summary for ../../docs/api/clients/ruby/docs/TipV2.md:
+This document describes the properties and example usage of the DailyLedger::TipV2 class, which includes currency, date, earnings, excluded_reason, pay_period_id, and company_pay_period_id properties.
+
+Summary for ../../docs/api/clients/ruby/docs/TipsEarningBulkMetadata.md:
+A Ruby example showcasing the usage of the DailyLedger gem's TipsEarningBulkMetadata class for managing pay period and provider account metadata.
+
+Summary for ../../docs/api/clients/ruby/docs/TipsEarningBulkMetadataList.md:
+This is an example code for using the DailyLedger module to create a new instance of the TipsEarningBulkMetadataList class with a null tips_earning_bulk_metadata_list value.
+
+Summary for ../../docs/api/clients/ruby/docs/TipsEarningJobStatus.md:
+The document provides information about the properties and example usage of the DailyLedger::TipsEarningJobStatus class, including properties like id, provider_id, status, created_at, and updated_at.
+
+Summary for ../../docs/api/clients/ruby/docs/TipsEarningMetadata.md:
+This document provides information on the properties and example usage of the DailyLedger::TipsEarningMetadata class, which includes the id, total_amount_cents, total_amount_currency, and created_at properties.
+
+Summary for ../../docs/api/clients/ruby/docs/TipsEarnings.md:
+This document describes the properties and example usage of the `DailyLedger::TipsEarnings` class, including the `id`, `pay_period_id`, `total_amount_cents`, `total_amount_currency`, `latest_earnings`, `created_at`, and `invalidated` attributes.
+
+Summary for ../../docs/api/clients/ruby/docs/TipsEarningsEntryV1.md:
+The DailyLedger::TipsEarningsEntryV1 class represents a tips earnings entry with properties such as pay_group, user_id, gross_earnings_identifier, date, and earnings, and provides an example usage in Ruby.
+
+Summary for ../../docs/api/clients/ruby/docs/TipsEarningsList.md:
+This document describes the properties and example usage of the TipsEarningsList class in the DailyLedger program.
+
+Summary for ../../docs/api/clients/ruby/docs/TipsEarningsTipsPayloadV1.md:
+This document describes the properties of the DailyLedger::TipsEarningsTipsPayloadV1 class, including tips_list, pay_period_id, provider_account_id, and job_id, along with an example usage in ruby.
+
+Summary for ../../docs/api/clients/ruby/docs/TipsListV1.md:
+This document provides an example of creating a tips list using the DailyLedger library in Ruby.
+
+Summary for ../../docs/api/clients/ruby/docs/TipsListV2.md:
+The DailyLedger::TipsListV2 class has a property called tips_list, which is an array of TipV2 objects, and an example of how to create an instance of the class with tips_list set to null.
+
+Summary for ../../docs/api/clients/ruby/docs/TransferDetails.md:
+An example code snippet for using the DailyLedger::TransferDetails class with its properties and their descriptions.
+
+Summary for ../../docs/api/clients/ruby/docs/TransferDetailsList.md:
+The DailyLedger TransferDetailsList class represents a list of transfer details and can be instantiated with an array of transfer details.
+
+Summary for ../../docs/api/clients/ruby/docs/TransfersApi.md:
+The DailyLedger TransfersApi provides methods to get the first transfer made by a user for a given provider account and to get the transfer details for the last 2 pay periods for a provider account, with options to specify the number of pay periods.
+
+Summary for ../../docs/api/clients/ruby/docs/UserWithPossibleBalance.md:
+The code snippet shows the usage of `DailyLedger::UserWithPossibleBalance` class in Ruby, which allows creating a user object with properties like id and uuid.
+
+Summary for ../../docs/api/clients/ruby/docs/UsersWithPossibleBalance.md:
+This document describes the properties and example usage of the UsersWithPossibleBalance class in the DailyLedger module.
+
+Summary for ../../docs/api/clients/ruby/docs/XDataSource.md:
+This document provides an example of how to create a new instance of the DailyLedger::XDataSource class in Ruby.
+
+Summary for ../../docs/apiKeys.md:
+API Keys are stored in Secrets Manager (as JSON) or locally (as YAML) for development purposes, and are used to provide different levels of access to a system, such as read, write, and administrative permissions.
+
+Summary for ../../docs/architecture/overview.md:
+The document provides an overview of the Ledger architecture in the DailyPay system, with high, mid, and low-level diagrams explaining how it fits into the larger system and its interactions with other APIs and databases.
+
+Summary for ../../docs/buildTestAndDeploy.gen.md:
+ChatCompletionMessage(content='This document provides information on the build, test, and deploy setup for a service, including instructions for local build, unit tests, integration tests, system tests, regression tests, and different methods of deployment. It also explains how to create releases and provides guidelines for versioning strategy, as well as information on how to rollback to a previous version if necessary.', role='assistant', function_call=None, tool_calls=None)
+
+Summary for ../../docs/businessValue/anticipatedGains.md:
+This document describes the anticipated gains in performance, cost, maintainability, usability, and disaster recovery from implementing a Ledger Service in three phases: serving user balance queries, serving all user balance queries, and serving all read/write traffic for user balances.
+
+Summary for ../../docs/businessValue/ledgerYear1.md:
+The Ledger Year 1 Business Value includes high-level goals such as removing available balance calls/writes from the core database, using Kafka for Change Data Capture (CDC), implementing an API for Ledger operations, and offloading Ledger work to Ledger Service(s). The estimated savings include a reduction in infrastructure costs and contract costs, as well as improved developer efficiency and easier access to data.
+
+Summary for ../../docs/clients.md:
+OpenAPI specifications allow us to auto generate clients for multiple languages such as Ruby, Java, etc., using openapi-generator, which also adds documentation with example usages for clients.
+
+Summary for ../../docs/core/invoices/column_usage/creation.md:
+The diagram provides a high-level overview of the classes involved in the invoice creation processes in the core system.
+
+Summary for ../../docs/core/invoices/column_usage/tableStructure.md:
+The table "invoices" in the "public" schema has several columns including id, provider_account_id, attachment, total_amount_cents, total_amount_currency, period_ends_at, created_at, updated_at, provider_version, gross_amount_cents, gross_amount_currency, platform, invoice_exclusion_id, status, attachment_checksum, overage_amount_cents, overage_amount_currency, and body. It also has several indexes including "invoices_new_pkey", "index_invoices_on_attachment_checksum", "index_invoices_on_created_at", "index_invoices_on_pay_period_id", and "index_invoices_on_provider_account_id_and_period_ends_at". There are foreign key constraints on the "pay_period_id" column, referencing the "pay_periods" table, and it is referenced by the "settlements" and "advances" tables.
+
+Summary for ../../docs/core/invoices/column_usage/tableUsage.md:
+The `invoices` table in Core has various columns such as ID, Provider Account ID, Platform, Attachment, Attachment Checksum, Total/Gross/Overage Amounts, provider_version, period_ends_at, invoice exclusion id, status, body, created_at, and updated_at. These columns are used for different purposes such as determining the type of invoice, storing attachment information, calculating amounts, and tracking invoice status. However, some of the information provided may be outdated.
+
+Summary for ../../docs/coreFeatureFlagsAndFlippers.md:
+The document explains how to use Flipper Gates and Rails Cache for feature flagging in Core, and provides instructions for viewing and enabling/disabling flippers in different environments.
+
+Summary for ../../docs/coreToLedgerMigrationCriteria.md:
+The criteria for the success of the migration of Ledger specific data from Core to a separate service include response time, comparison consistency, errors, side by side duration, and DB load.
+
+Summary for ../../docs/database/addingIndicesToPartitionedTables.md:
+This document provides a step-by-step guide for adding indices to partitioned tables, specifically using the `btree` index type and single-column indices. It also includes instructions for updating a local development environment and useful links for further reference.
+
+Summary for ../../docs/database/addingTableToCDC.md:
+The document provides steps to add a table to CDC including adding the topic in Confluent, sinking messages into Ledger's db, configuring Debezium connector, adding the table to Secrets Manager, restarting sinker tasks, and creating a publication in PostgreSQL.
+
+Summary for ../../docs/database/backups/backups.md:
+Backups configured using AWS Backup managed via Terraform.
+
+Summary for ../../docs/database/backups/restoration.md:
+This document provides steps for restoring a database from backup using the RDS console, including copying the backup to the desired region and configuring the restored snapshot.
+
+Summary for ../../docs/database/businessLogic/gross_earnings_logic.md:
+Gross earnings are calculated for a single person based on the shifts they work during a pay period, with the option to include all shifts or only the shifts within a specified time window, and duplication is handled by updating the total earnings if it changes or leaving it unchanged if it remains the same.
+
+Summary for ../../docs/database/businessLogic/shifts_logic.md:
+Shifts created by a single person for a single day with multiple shifts are bundled into one entry in the table, with duplicate entries treated as corrections.
+
+Summary for ../../docs/database/cdc.md:
+This document provides instructions on how to set up Change Data Capture (CDC) and event streaming using Debezium, including creating tables, users, publications, logical replication slots, and source connectors, as well as adding and removing tables from the CDC process.
+
+Summary for ../../docs/database/databaseRequirements.md:
+This document outlines the requirements for a database, including backup and restore capabilities, real-time streaming updates, transactional processing, and write access restrictions, with relevant facts about the user base.
+
+Summary for ../../docs/database/databaseTables.md:
+This document provides an overview of tables in the database, including their data retention policies and partitioning strategies.
+
+Summary for ../../docs/database/dbBackups.md:
+Database backups are stored in the db/docs/backups directory.
+
+Summary for ../../docs/database/droppingColumns.md:
+This document provides instructions on how to drop columns on a large table, including suspending auto vacuum and re-enabling it after the drop operation, along with a playbook for performing major changes on the database.
+
+Summary for ../../docs/database/fixMigrations.md:
+To fix migrations, run a Docker command with the desired version, then execute the migrate command with the migration version and database details.
+
+Summary for ../../docs/database/initialization.md:
+Instructions on how to initialize the Postgres Database in a deployed environment, including changing passwords, running bootstrap scripts, applying migrations, and granting necessary privileges.
+
+Summary for ../../docs/database/legacyDocs/addingToReplication.md:
+A guide on how to add tables for replication update subscriptions appropriately, including steps to add necessary schema, update publication, and refresh subscription.
+
+Summary for ../../docs/database/legacyDocs/replication.md:
+This document provides a step-by-step guide for replicating data from a core system to a ledger system, including creating users, getting a schema dump, restoring the dump, setting up replication, and tearing down the setup.
+
+Summary for ../../docs/database/logs.md:
+DB Logs are currently being logged to CloudWatch for Production, UAT, and Staging environments, with the intention of moving to DataDog in the future.
+
+Summary for ../../docs/database/partitionManagement.md:
+This document describes the partition management system for tables in the `ledger` database.
+
+Summary for ../../docs/database/pgAnalyze.md:
+PGAnalyze is a tool used for analyzing query patterns and database load, and can be accessed at <https://app.pganalyze.com/organizations/dailypay/servers>.
+
+Summary for ../../docs/definitions.md:
+Gross Earning is the total earnings over a specific time period.\n- Gross Earning Body provides the details that make up a Gross Earning.\n- Tips Earning is the total earnings from tips over a specific time period.\n- Tips Earning Body provides the details that make up a Tips Earning.\n- Pre Settlements are advances sent when a net earnings file is approved.\n- Settlements are created when we receive the remaining amount on payday.\n- Advances are funds retrieved for a user, categorized by provider account.\n- There are different types of advances, including auto, balance_transfer, pull, pre_settlement, refresh, and payment_plan_workoff.
+
+Summary for ../../docs/dependencies.gen.md:
+This document provides information about the internal and external dependencies for this service, and there are currently no dependencies listed.
+
+Summary for ../../docs/development.gen.md:
+This document provides information on development for a service including initial setup, Docker configuration, Go integration, Terraform usage, and GitHub Actions.
+
+Summary for ../../docs/development.md:
+This document provides instructions for setting up the development environment, including configuring GitHub tokens, Go, Docker, and dependencies, as well as troubleshooting tips and information about Terraform and Github Actions. It also includes instructions for communicating with the Ledger External Endpoint.
+
+Summary for ../../docs/e2eTesting.md:
+Performing End to End Testing in Staging Employee Portal and Admin Portal, including checking balance and making advances.
+
+Summary for ../../docs/earnings/earningsIngestionWorkflows.md:
+The document explains the different types of earnings handled by Ledger, the public identifiers used to resolve provider accounts, the concept of missed earnings, and the implementation of earnings exclusions.
+
+Summary for ../../docs/earnings/earningsInvalidationWorkflow.md:
+Earnings can be invalidated by marking them as invalid in the `invalidated` column of the `gross_earnings` and `tips_earnings` tables, and these invalidated earnings are excluded from various endpoints and balance calculations.
+
+Summary for ../../docs/earnings/grossEarningsWorkflow.md:
+The Gross Earnings Workflow is responsible for ingesting shift-level data from Providers, using two endpoints within Ledger (V1 and V2) to handle different reference types and updating the job status at each step. The data is stored in separate rows in the `ledger.gross_earnings` table, with the most recent entries overwriting previous ones, and a full history of the upserted Gross Earnings available in the `ledger.gross_earnings_bodys` table.
+
+Summary for ../../docs/earnings/projectedNetEarningsWorkflow.md:
+This document describes the workflow for projected net earnings, including the job enqueuer, gross earnings producer, and the calculation process, as well as monitoring and manual running of the jobs.
+
+Summary for ../../docs/earnings/salariedEarningsWorkflow.md:
+This document explains the workflow for generating salaried earnings in the Ledger system, including the architecture diagram and the process for generating earnings for each provider. Manual instructions for running the Salaried Earnings Job Enqueuer and Salaries Producer are also provided.
+
+Summary for ../../docs/earnings/tipsEarningsWorkflow.md:
+The Tips Earnings Workflow is responsible for ingesting Tips data from Providers, and it follows a specific architecture diagram and workflow process to process the earnings data and store it in the database.
+
+Summary for ../../docs/featureFlags.md:
+ChatCompletionMessage(content='Feature flags in AppConfig can be set up, released, and configured manually or via Terraform, and can also be handled locally using a file.', role='assistant', function_call=None, tool_calls=None)
+
+Summary for ../../docs/investigatingDiscrepanciesInCore.md:
+ChatCompletionMessage(content='This document discusses investigating discrepancies in core by checking data in the admin portal for a user.', role='assistant', function_call=None, tool_calls=None)
+
+Summary for ../../docs/investigations/api/core_commit_actions/commit_actions.md:
+This document outlines the commit actions and hooks for models related to invoices, advances, settlements, fees, payments, bonuses, disbursements, rewards, and orbit rewards, specifying the actions performed on create, validate, save, update, and destroy operations.
+
+Summary for ../../docs/investigations/api/core_commit_actions/investigation.md:
+The document discusses the impact, goals, context, and suggested approach for migrating core models to Ledger API and dealing with Active Directory callbacks and the entanglement between Payments and non-Ledger models. The main risks and knowns are highlighted, while assumptions and unknowns are also mentioned.
+
+Summary for ../../docs/investigations/api/extend_api_read_endpoints/investigation.md:
+This investigation aims to determine the efforts needed for Ledger to provide financial data to Extend API, with a focus on addressing read traffic and replacing ExtendAPI's use of core database access with Ledger API endpoints.
+
+Summary for ../../docs/investigations/api/platform_app/tech_debt_2023_04/investigation.md:
+Platform App, the application responsible for financial transactions at DailyPay, needs refactoring updates and identification of key projects to address technical debt, including codebase refactors, SRE improvements, and infrastructure enhancements.
+
+Summary for ../../docs/investigations/api/rehire_checker_and_updater_job/investigation.md:
+This document investigates the changes needed to relocate the logic in the `RehireCheckerAndUpdater` class and provides context, logic details, types of calls made, risks, assumptions, and resources.
+
+Summary for ../../docs/investigations/balance/available_balance/change_event_notifications/investigation.md:
+Investigation into creating notifications and APIs for changes to available balance, including moving notifications to Ledger and creating an API for support admin portal; current usage of available balance change events by the Comms team for user profile updates and email sending; API calls to the available_balance_changes table for count and last update of available balance changes; potential removal of unused providers call; PGAnalyze SQL queries for available balance changes in Writer and Replica; Snowflake queries for updated balances for invoices; risks of not capturing everything needed by Iterable and Reporting; knowns include usage by Comms team, limited usage in core app, and importance for Snowflake reporting; assumptions include publishing data needed for Comms and reducing burden on Ledger DB lag time.
+
+Summary for ../../docs/investigations/balance/available_balance/faster_unprocessable_payable_balance_response_times/investigation.md:
+Goal: Improve response times for available balance query and reduce computation load for available balance reads by pre-calculating values related to settlements bonuses. Risks include incorrect pre-calculation and extra work, while knowns include the slowest query, infrequent settlements bonuses, and a large number of available balance calls per day. Assumptions include the cost of extra writes being less than the cost of looking up bonuses on the fly, and the removal of indexes on tables if the pre-calculation method is used. Unknowns include the likelihood of users looking up their balance and the potential reduction in available balance calls long term.
+
+Summary for ../../docs/investigations/balance/ledger_available_balance_in_core/investigation.md:
+This document explains the current state of available balance computations in Core Monolith and proposes transitioning the computation to Ledger via API requests, with a phased rollout plan using Flipper functionality.
+
+Summary for ../../docs/investigations/balance/replace_available_balance_changes_table/investigation.md:
+This document discusses the need to replace the `available_balance_changes` table in the Core application database with the Ledger service, highlighting the benefits, risks, and proposed steps involved in the process.
+
+Summary for ../../docs/investigations/balance/user_current_balance/investigation.md:
+The Ledger API is being investigated as a potential replacement for the current user balance function in the DailyPay system, but additional investigations and considerations are needed for various aspects such as fees, payments, and rewards.
+
+Summary for ../../docs/investigations/balance/user_current_balance/simplified_query.md:
+The updated user_balance query tested against the core's user balance function for 30k users, matching results for tested users, but not accounting for unpaid rewards, orbit_rewards, and therefore not a viable replacement.
+
+Summary for ../../docs/investigations/db/debezium_cdc/investigation.md:
+Debezium is an alternative to Postgres replication that provides features for disaster recovery and allows for easy monitoring and event schema handling, by streaming database changes to Kafka and utilizing the Schema Registry.
+
+Summary for ../../docs/investigations/db/debezium_reloads/businessCaseTemplate.md:
+The business case highlights the problem of high consumer lag when replicating a large table via CDC, which can negatively impact the ability of other services to replicate data over the same topic, and suggests adding another Debezium source connector set of topics for reloading data as a potential solution.
+
+Summary for ../../docs/investigations/db/debezium_reloads/investigation.md:
+Debezium Table Reloads is a solution to prevent table refreshes from impacting other services and preserving event ordering in regular Debezium CDC topics by using separate CDC topics for regular consumption and table refreshes.
+
+Summary for ../../docs/investigations/db/kafka_postgres_sink/investigation.md:
+This document discusses the options for writing events from a Kafka topic sourced from a Postgres database to a downstream Postgres database, including the pros and cons of using the PostgreSQL Sink Connector for Confluent Cloud versus a custom Go microservice, and proposes using the Confluent Cloud managed Postgres Sink connector as the best option.
+
+Summary for ../../docs/investigations/db/later_phase_db_choice.md:
+Aurora PostgreSQL is the best choice for Ledger's final phase due to its strong transactional guarantees and well-understood backup and recovery.
+
+Summary for ../../docs/investigations/db/partition_monitoring/investigation.md:
+The document investigates the ability to construct PostgresQL partition monitoring for Ledger and Users services, discussing the goals, context, risks, knowns, assumptions, unknowns, and resources.
+
+Summary for ../../docs/investigations/db/qldb_performance/investigation.md:
+The performance of QLDB, a fully managed auto-scaling service, was tested using 10 concurrent lambdas, with the slowest total runtime being 10 minutes and 2 seconds, while the solo execution took 7 minutes and 1 second, indicating that multiple active sessions impact performance.
+
+Summary for ../../docs/investigations/db/remove_split_fee_cached_mat_view/investigation.md:
+The goal is to remove the split_fee_cached materialized view from the Core DB to improve database performance, as it is only used from the Metabase context and already replicated in Snowflake.
+
+Summary for ../../docs/investigations/db/top_queries_for_ledger_tables/apis.md:
+This document proposes a series of APIs to expose top queries run against core databases owned by the Ledger service, with flexible query parameters and support for various use cases.
+
+Summary for ../../docs/investigations/db/top_queries_for_ledger_tables/investigation.md:
+The top queries for ledger tables include counting payments for a user, summing fees for a pay period, getting advances by payment ID, summing fees by user, summing fees by pay period, summing fees by payment, retrieving invoices for a provider account, retrieving invoices for a pay period, retrieving invoices for a user, counting distinct payments for a user, and getting payments for a user.
+
+Summary for ../../docs/investigations/disbursements/invoice_id/investigation.md:
+The goal of this initiative is to remove the association of invoice IDs with settlements and advances, as only a small percentage of advances and settlements have invoice IDs and there doesn't seem to be a clear use case for them. The approach suggested is to explore the relationship between advances and invoices to see if they can be decoupled, and work with Planks to prioritize the removal of the invoice ID column from the settlements table. There are potential risks involved in removing the invoice ID column, but they can be mitigated with proper planning and validation.
+
+Summary for ../../docs/investigations/earnings/cewa_data_ingestion/investigation.md:
+Investigate how to ingest and store CEWA earnings data for available balance computation; two options: re-use `invoices` CDC events or listen to `d2c` topic and sink earnings data to separate `cewa_earnings` table; CEWA available balance formula is the CEWA advance rate multiplied by the sum of CEWA earnings minus advances; risk of Ledger not receiving debit events in time mitigated by making synchronous API call to Core for latest data.
+
+Summary for ../../docs/investigations/earnings/dex_data_ingestion/investigation.md:
+This document discusses the goals, current setup, and proposed release plan for ingesting and storing earnings data within the Ledger system, including the use of APIs, data consistency, and potential risks.
+
+Summary for ../../docs/investigations/earnings/earnings_entries/investigation.md:
+Migrating earnings_entries table from Core to Ledger to reduce workload on Core database and increase reliability/uptime, involving read and write queries and extending CDC replication and Ledger service.
+
+Summary for ../../docs/investigations/earnings/earnings_invalidation/investigation.md:
+This document discusses the need to implement a mechanism to manually invalidate erroneous earnings and automate the invalidation process in response to broader state changes in DailyPay's ledger system. This includes adding an "isActive" column to the gross_earnings and tips_earnings tables, creating a Kafka topic for earnings invalidation, and updating code locations in the core system to send messages on this topic. The document also mentions the risks associated with invalidation by ID and timing issues with company pay period mutations.
+
+Summary for ../../docs/investigations/earnings/earnings_invalidation/use_reported_earnings_instead_of_status_column/investigation.md:
+This document discusses an investigation into earnings invalidation using reported earnings in the ledger system, suggesting an approach of adding a status column for excluded earnings and utilizing reported earnings alongside total earnings.
+
+Summary for ../../docs/investigations/earnings/excess_exclusions/investigation.md:
+Investigation to determine the need to exclude amounts over the exclusion limit rather than excluding them entirely, with suggested steps and risks associated with the implementation.
+
+Summary for ../../docs/investigations/earnings/exclusions/investigation.md:
+To move earnings exclusion data from Core to Ledger, it is suggested to create a new "earnings_exclusions" table in the Ledger DB and build a REST API around it to replace DB calls in Core, with a small UI update to the Admin Portal required, and sync the data through a one-off data copy from Core to Ledger.
+
+Summary for ../../docs/investigations/earnings/invoice_body/investigation.md:
+The goal is to remove the body column from invoices, which contains duplicated shift data, and store the shift information in a separate table for easier access and retrieval, with the risk of requiring significant processing time to populate the new table with historical information.
+
+Summary for ../../docs/investigations/earnings/invoice_body/pay_period_balance_details_request.md:
+The provided link is a sample request to support portal API for retrieving pay period balance details including earnings, dates, and balances.
+
+Summary for ../../docs/investigations/earnings/invoice_body/usage.md:
+This document explains the usage of the `DataExchange::GrossEarnings::ShiftFilterer` in various parts of the system, such as invoice creation, support portal, auditor portal, OrbitAPI, backend invoices controller, and GraphQL. It also provides example outputs for each usage scenario.
+
+Summary for ../../docs/investigations/earnings/ledger_gross_earnings_relation/current_core_invoices_table.md:
+The `invoices` table in the core database contains columns such as id, provider_account_id, attachment, total_amount_cents, total_amount_currency, period_ends_at, created_at, updated_at, provider_version, gross_amount_cents, gross_amount_currency, platform, invoice_exclusion_id, status, attachment_checksum, overage_amount_cents, overage_amount_currency, body, and pay_period_id. It also has various indexes and foreign key constraints.
+
+Summary for ../../docs/investigations/earnings/ledger_gross_earnings_relation/investigation.md:
+This investigation aims to identify the necessary fields for Ledger's `invoices` table, which has been renamed to `gross_earnings` to accurately reflect its meaning and purpose. The suggested approach includes creating a new table with specific changes to column names and data types, and implementing appropriate indexes. There are potential risks and unknowns associated with this process.
+
+Summary for ../../docs/investigations/earnings/migrate_core_to_invoices_api/investigation.md:
+This document outlines the investigation into migrating Core to use the Ledger Invoices API, including identifying additional query parameters and addressing concerns around the current usage of invoices in Core, such as testing challenges and the need for factory methods to populate invoices on models.
+
+Summary for ../../docs/investigations/earnings/migrate_core_to_invoices_api/query_usage.md:
+The document discusses various queries related to invoices in the core application code, including views, available balance plans, invoice uniqueness, provider accounts without earnings, and more. It also mentions the current read and write queries against the Ledger database and the reporting replica.
+
+Summary for ../../docs/investigations/earnings/migrate_invoice_reads_from_writer/investigation.md:
+This document discusses the migration of read queries for the invoices table in the core application's Postgres instance to the Ledger database in order to reduce load and make Ledger the source of truth for all financial data.
+
+Summary for ../../docs/investigations/earnings/ne_model_gross_earnings/investigation.md:
+- Investigation of ingesting net earnings model based gross earnings from Data Science and computing available balance.
+- Data Science streams earnings data via Kafka, which is then sunk to Ledger DB.
+- Ledger DB schema includes a table for storing model-driven earnings.
+- Assumptions include daily data from Data Science and access to base advance rate from providers table.
+- Risks include pay schedule changes during a pay period and potential volume of events from Data Science.
+
+Summary for ../../docs/investigations/earnings/negative_balance_adjustments/investigation.md:
+Investigating how to handle events where earnings are less than the previous day in the same pay period, due to users updating their earnings data.
+
+Summary for ../../docs/investigations/earnings/new_provider_account_earnings/investigation.md:
+This document discusses the need to load earnings data for newly onboarded provider accounts and proposes a suggested approach to accomplish this. It also mentions risks and assumptions associated with the implementation.
+
+Summary for ../../docs/investigations/earnings/pay_periods_creation/investigation.md:
+The goal is to determine how to handle pay period insertion during earnings import process in order to integrate it with Ledger's earnings pipeline, with a suggested approach of creating a new API endpoint in Core that UPSERTS pay periods from provider_account_id period_ends_at, and the risk of slower earnings process due to Core's high response time with a low likelihood and mitigated by scaling up Core API instances and trying bulk UPSERT.
+
+Summary for ../../docs/investigations/earnings/reprocessing_earnings_job_dlq/investigation.md:
+The document discusses the re-processing of gross earnings jobs that landed in the DLQ without overwriting newer data, by adding a UUID column and updating the existing upsert query.
+
+Summary for ../../docs/investigations/earnings/salaried_earnings_creation/investigation.md:
+This document discusses the process of creating gross earnings for salaried users and proposes an approach to move this process to the Ledger service, while also outlining risks and knowns associated with the current process.
+
+Summary for ../../docs/investigations/earnings/shift_table_partitioning/current_earnings_entries_schema.md:
+The `earnings_entries` schema in core has columns for id, external_id, earned_on, total_amount_cents, total_amount_currency, total_hours, created_at, updated_at, provider_id, and pay_group.
+
+Summary for ../../docs/investigations/earnings/shift_table_partitioning/investigation.md:
+Teams DPLAT and DBADMIN aim to determine a partitioning strategy and data deletion process for the shifts table, with the strongest motivator being the removal of "old" data older than 60 days, and the suggested approach includes using the earned_on column as the partition key and weekly partitions.
+
+Summary for ../../docs/investigations/earnings/tips/investigation.md:
+The document describes an investigation into adding tips as a method of earnings for users, including goals, useful context, a suggested approach, risks, knowns, assumptions, and unknowns.
+
+Summary for ../../docs/investigations/earnings/tips_provider_settings/investigation.md:
+The addition of tips to the available balance introduces a new component in the balance calculation that can be enabled/disabled at the provider level, and the Ledger API needs to be aware of this value to determine whether or not to include tips in the calculation.
+
+Summary for ../../docs/investigations/generatingTasks.md:
+To generate tasks for bulk import in CSV format, run the command "make generate-tasks <path_to_taskBreakdown.yaml_starting_at_investigations_folder>" and use the generated file "output/bulk.csv" for import in JIRA.
+
+Summary for ../../docs/investigations/investigations.md:
+Investigation documents aim to provide relevant context and information to determine the purpose and methods of the investigation, while also establishing a distinction between the known, assumed, and unknown factors to assess the probability of success. They can include links to external resources like wikis and Lucidcharts for additional information.
+
+Summary for ../../docs/investigations/reporting/sinking_ledger_data_to_snowflake/investigation.md:
+The document discusses the process of sinking ledger data to Snowflake using Kafka and the potential risks involved.
+
+Summary for ../../docs/investigations/sre/container_lifecycle/investigation.md:
+There is a problem with no information being displayed in the Ledger dashboard regarding container exits and restarts in ECS/Fargate, but the proposal suggests that implementing custom metrics for this is not a priority at the moment.
+
+Summary for ../../docs/investigations/sre/endpoints/ensuringMetricsMonitoringAndDocumentation.md:
+OpenAPI spec is used to generate code, metrics, monitoring, and documentation for managing data endpoints, including response time and error metrics, terraform monitors, and endpoint information.
+
+Summary for ../../docs/investigations/sre/endpoints/investigation.md:
+The document discusses the investigation of automating the creation of metrics, monitoring, documentation using OpenAPI spec, with the suggested approach of generating metrics based on operationId and generating terraform monitors and endpoint information files.
+
+Summary for ../../docs/investigations/taskBreakdowns.md:
+Task breakdowns are used to summarize the work required to complete a specific project by breaking it down into smaller tasks, such as setting up a repository, dockerizing a service, and creating infrastructure code for continuous deployment. These breakdowns are written in YAML format for easier readability and to generate JIRA tickets.
+
+Summary for ../../docs/investigations/templates/businessCaseTemplate.md:
+The document provides a summary of the potential monetary gain and loss if the business case is implemented or not, along with the breakdown of the request and metrics to determine the achievement of goals. Additional context may be required depending on the specific needs, such as hiring plans or assistance from another team for infrastructure.
+
+Summary for ../../docs/investigations/templates/investigation.md:
+This document provides a brief synopsis of an initiative being investigated, including goals, context, suggested approach, risks, knowns, assumptions, and unknowns.
+
+Summary for ../../docs/investigations/users/moving_users_out_of_ledger/investigation.md:
+This document outlines the proposal to refactor the `users` table out of the Ledger service, including creating a separate service to handle the `users` table, updating queries to source data from this service, and removing the `users` table modules from the Ledger service and database.
+
+Summary for ../../docs/investigations/users/utilise_users_api/investigation.md:
+The document discusses the utilization of the Users API to replace certain queries and methods in the Ledger service, with the goal of using Users API endpoints for data related to users and ensuring effective testing workflows.
+
+Summary for ../../docs/kafkaIntegrations/eventProcessor.md:
+The event processor generates "Available Balance Changed" events in response to changes in a subset of data used to calculate the available balance, and it listens to Kafka topics populated by the Debezium source connector using the Ledger DB.
+
+Summary for ../../docs/kafkaIntegrations/sinkers.md:
+Sinkers are responsible for sinking data from Kafka into ledger-owned tables and reacting to events from other services, providing more control and resilience to schema changes, and performing actions based on these events.
+
+Summary for ../../docs/maintenanceMode.md:
+Ledger application has a maintenance mode that can be turned on and off via specific functionality or by disabling all writes and reads, and it can also be controlled through the admin API or using make targets.
+
+Summary for ../../docs/newEnvironmentSetup.md:
+This document outlines the steps needed to set up a new environment for Ledger, including app configuration and secrets management.
+
+Summary for ../../docs/onboarding.md:
+This document provides instructions on how to set up local CLI access for the Ledger repository using Artifactory.
+
+Summary for ../../docs/openAPI.md:
+This project uses OpenAPI spec to create API documentation and utilizes multi-file specification for user-facing documentation bundling.
+
+Summary for ../../docs/retros/migrating_earnings_exclusions_to_ledger.md:
+This document is a retrospective for the migration of earnings exclusions from the Core app to Ledger, noting pain points such as rollout coordination and null values in the data.
+
+Summary for ../../docs/security.gen.md:
+This document provides basic information about security for this service, including ownership files, branch protection rules, use of a credentials manager, and compliance with security requirements.
+
+Summary for ../../docs/sre/runbooks/advanceRates/v1GetAdvanceRates.md:
+This runbook provides specific information on recognizing and recovering from issues related to the v1GetAdvanceRates operation.
+
+Summary for ../../docs/sre/runbooks/advanceRates/v1PutAdvanceRates.md:
+This runbook covers specific issues and recovery steps related to the v1PutAdvanceRates operation.
+
+Summary for ../../docs/sre/runbooks/advanceRatesGeneralRunbook.md:
+The "advanceRates Runbook" provides information on recognizing and recovering from general issues that occur with advanceRates operations.
+
+Summary for ../../docs/sre/runbooks/advances/v1AdvancesAdvanceRate.md:
+This runbook provides specific instructions on how to recognize and recover from issues related to the v1AdvancesAdvanceRate operation.
+
+Summary for ../../docs/sre/runbooks/advancesGeneralRunbook.md:
+This runbook provides steps to recognize and recover from issues with /v1/ledger/advances endpoints, including checking the Ledger Screenboard, ledger-web-reader logs, ECS cluster health, and App Config settings.
+
+Summary for ../../docs/sre/runbooks/availableBalance/v1AvailableBalance.md:
+This runbook provides information on specific issues and recovery procedures for the v1AvailableBalance operation.
+
+Summary for ../../docs/sre/runbooks/availableBalance/v1AvailableBalanceByPayPeriod.md:
+This runbook covers specific issues with the v1AvailableBalanceByPayPeriod operation and provides recovery steps.
+
+Summary for ../../docs/sre/runbooks/availableBalance/v1AvailableBalanceLastUpdated.md:
+This runbook covers issues and recovery steps for the v1AvailableBalanceLastUpdated operation.
+
+Summary for ../../docs/sre/runbooks/availableBalanceGeneralRunbook.md:
+This runbook provides steps for recognizing and recovering from issues with the /v1/ledger/available_balance endpoints, including checking patterns on the Ledger Screenboard, logs for ledger-web-reader, health of the ECS cluster, and settings in App Config.
+
+Summary for ../../docs/sre/runbooks/badDBMigration.md:
+This document explains how to recognize and recover from a bad DB migration that leaves the database in a state that won't allow further migrations.
+
+Summary for ../../docs/sre/runbooks/databaseCPULoad.md:
+The document provides a runbook to handle high CPU load on a database, including how to recognize the issue and recover from it.
+
+Summary for ../../docs/sre/runbooks/databaseFreeStorageSpaceRunbook.md:
+The document provides a runbook for handling low free storage space in a database, including recognizing the issue through alerts and a dashboard, and recovering by referring to a common issues runbook.
+
+Summary for ../../docs/sre/runbooks/databaseNonCPULoad.md:
+This document provides a runbook for handling high number of active sessions in a database when the wait event type is not CPU.
+
+Summary for ../../docs/sre/runbooks/dbFullRefresh.md:
+This document provides instructions for refreshing the Ledger database, verifying the Core database, restarting the Confluent Debezium CDC Source connector, triggering reloads of replicated tables, and resetting sink target groups after data loss.
+
+Summary for ../../docs/sre/runbooks/debeziumReset.md:
+This runbook provides instructions on how to reset Debezium CDC topics in case of events lost, recognizing database event loss and recovering table reset by adding an entry into the `debezium_signals` table.
+
+Summary for ../../docs/sre/runbooks/earnings/projectedNetEarningsGrossEarningsJobEnqueueingFailure.md:
+This runbook provides instructions on how to recognize and recover from issues with the projected net earnings gross earnings job enqueuer.
+
+Summary for ../../docs/sre/runbooks/earnings/salariedEarningsJobEnqueueingFailure.md:
+This runbook provides guidance on recognizing and recovering from issues with the salaried earnings job enqueuer, including checking logs, ECS cluster tasks, monitoring information, and manually running the task.
+
+Summary for ../../docs/sre/runbooks/earnings/v1GetEarningsFluctuations.md:
+This runbook provides instructions for recognizing and recovering from specific issues with the v1GetEarningsFluctuations operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1GetEarningsSalaried.md:
+This runbook covers specific issues with the v1GetEarningsSalaried operation and how to recover from them.
+
+Summary for ../../docs/sre/runbooks/earnings/v1GetShiftsForGrossEarning.md:
+This runbook provides specific information on issues and recovery steps for the v1GetShiftsForGrossEarning operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1GetTipsDetailed.md:
+This runbook covers specific issues that occur with v1GetTipsDetailed operation and how to recover from them.
+
+Summary for ../../docs/sre/runbooks/earnings/v1GetTipsForTipsEarning.md:
+This runbook provides information on specific issues and recovery steps related to the v1GetTipsForTipsEarning operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1GetTipsForTipsEarnings.md:
+This runbook provides information on specific issues and recovery steps for the v1GetTipsForTipsEarnings operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1GrossEarningsById.md:
+This runbook provides information on specific issues and recovery steps related to the v1GrossEarningsById operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1GrossEarningsDetailed.md:
+This runbook provides specific information on recognizing and recovering from issues with the v1GrossEarningsDetailed operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1GrossEarningsLargestForPayPeriod.md:
+This runbook provides information on specific issues and recovery steps for the v1GrossEarningsLargestForPayPeriod operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1GrossEarningsLatestShift.md:
+This runbook covers specific issues with v1GrossEarningsLatestShift operation and provides steps to recover from them.
+
+Summary for ../../docs/sre/runbooks/earnings/v1GrossEarningsProviderAccountDetails.md:
+This runbook provides specific information on recognizing and recovering from issues with v1GrossEarningsProviderAccountDetails operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1NetEarningsProviderAccountDetails.md:
+This runbook provides specific details on troubleshooting v1NetEarningsProviderAccountDetails operation issues and recovery steps.
+
+Summary for ../../docs/sre/runbooks/earnings/v1PostEarningsGross.md:
+This runbook provides information on specific issues and recovery steps for the v1PostEarningsGross operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1PostEarningsGrossBulk.md:
+This runbook provides specific recovery steps for issues related to the v1PostEarningsGrossBulk operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1PostEarningsTips.md:
+This runbook provides information on specific issues and recovery steps for v1PostEarningsTips operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1PostGrossEarnings.md:
+This runbook covers specific issues with the v1PostGrossEarnings operation and provides information on how to recover from them.
+
+Summary for ../../docs/sre/runbooks/earnings/v1PostSalariedEarnings.md:
+This runbook provides information on specific issues and recovery methods for the v1PostSalariedEarnings operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1TipsDetailed.md:
+This runbook provides specific instructions for recognizing and recovering from issues related to the v1TipsDetailed operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1TipsEarningsDetailed.md:
+This runbook provides specific information on recognizing and recovering from issues related to the v1TipsEarningsDetailed operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1TipsEarningsLatestTip.md:
+This runbook provides specific information and steps to recover from issues with the v1TipsEarningsLatestTip operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1TipsEarningsLookup.md:
+This runbook provides specific guidance on recognizing and recovering from issues with the v1TipsEarningsLookup operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v1TipsEarningsProviderAccountDetails.md:
+This runbook provides specific information on recognizing and recovering from issues with the v1TipsEarningsProviderAccountDetails operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v2GetShiftsForGrossEarning.md:
+This runbook covers specific issues and recovery steps for the v2GetShiftsForGrossEarning operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v2GetTipsDetailed.md:
+This runbook provides specific information on issues with v2GetTipsDetailed operation and how to recover from them.
+
+Summary for ../../docs/sre/runbooks/earnings/v2GetTipsForTipsEarnings.md:
+This runbook provides information on recognizing and recovering from specific issues related to the v2GetTipsForTipsEarnings operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v2GrossEarningsBulkLargest.md:
+This runbook provides specific information on issues and recovery steps for the v2GrossEarningsBulkLargest operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v2GrossEarningsBulkLatest.md:
+This runbook provides guidance on how to recover from specific issues that occur with the v2GrossEarningsBulkLatest operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v2PostGrossEarnings.md:
+This runbook provides specific guidance on recognizing and recovering from issues related to the v2PostGrossEarnings operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v2TipsEarningsBulkLatest.md:
+This runbook provides information on specific issues and recovery steps for the v2TipsEarningsBulkLatest operation.
+
+Summary for ../../docs/sre/runbooks/earnings/v2TipsEarningsLatestTips.md:
+This runbook provides specific information on recognizing and recovering from issues related to the v2TipsEarningsLatestTips operation.
+
+Summary for ../../docs/sre/runbooks/earningsExclusions/v1GetEarningsExclusions.md:
+This runbook provides information on specific issues and recovery methods for the v1GetEarningsExclusions operation.
+
+Summary for ../../docs/sre/runbooks/earningsExclusions/v1PutEarningsExclusions.md:
+A runbook covering specific issues and recovery methods for the v1PutEarningsExclusions operation.
+
+Summary for ../../docs/sre/runbooks/earningsExclusionsGeneralRunbook.md:
+This runbook provides guidance on recognizing and recovering from issues with /v1/ledger/earnings endpoints, including checking for anomalies on the Ledger Screenboard, reviewing logs for ledger-web-reader, checking the health of the ECS cluster, and reviewing settings in the App Config.
+
+Summary for ../../docs/sre/runbooks/earningsGeneralRunbook.md:
+This runbook covers issues with /v1/ledger/earnings endpoints and provides steps for recovery, including checking the Ledger Screenboard and logs, as well as reviewing the ECS cluster and App Config settings.
+
+Summary for ../../docs/sre/runbooks/ecs/cpuUtilizationIsHigh.md:
+This runbook provides steps for fixing high CPU utilization by monitoring metrics, increasing instances and CPU capacity, and escalating if necessary.
+
+Summary for ../../docs/sre/runbooks/ecs/memoryUtilizationIsHigh.md:
+This runbook provides steps to fix high memory utilization, including recognizing it through the Site Reliability Dashboard, monitoring other metrics, increasing instances and memory capacity, and escalating if necessary.
+
+Summary for ../../docs/sre/runbooks/kafka/consumerLagIsHigh.md:
+This document discusses the consumer lag in the Ledger system, with separate consumers for sinker and event processing, and provides steps for recognizing and recovering from high lag.
+
+Summary for ../../docs/sre/runbooks/payPeriods/findOrCreatePayPeriod.md:
+This runbook provides specific information on how to recognize and recover from issues with the findOrCreatePayPeriod operation.
+
+Summary for ../../docs/sre/runbooks/payPeriods/findOrCreatePayPeriodBulk.md:
+This runbook covers specific issues and recovery steps for the findOrCreatePayPeriodBulk operation.
+
+Summary for ../../docs/sre/runbooks/payPeriodsGeneralRunbook.md:
+This runbook covers general issues and recovery steps for payPeriods operations.
+
+Summary for ../../docs/sre/runbooks/providerAccounts/rehireCheckAndUpdate.md:
+This runbook covers issues and recovery steps for the rehireCheckAndUpdate operation, including how to recognize the issues and recover from them.
+
+Summary for ../../docs/sre/runbooks/providerAccountsGeneralRunbook.md:
+This runbook provides information on recognizing and recovering from general issues that occur with providerAccounts operations.
+
+Summary for ../../docs/sre/runbooks/rdsPartitionManagement.md:
+This runbook provides instructions for recognizing and recovering from partition management issues in a Ledger Postgres Database, including adding and dropping partitions, modifying cron jobs, and common operations.
+
+Summary for ../../docs/sre/runbooks/runbookTemplate.md:
+This runbook provides a brief overview of what it is used for, how to recognize when to use it, and how to recover from the situation it addresses, including any necessary scripts.
+
+Summary for ../../docs/sre/runbooks/runningServices.md:
+This runbook provides steps to fix a case where a service loses running tasks and cannot regain them, including recognizing the issue, checking logs, verifying secrets, checking data, and escalating if needed.
+
+Summary for ../../docs/sre/runbooks/shiftsLists/v1GetShiftLists.md:
+This runbook provides information on specific issues and recovery methods related to the v1GetShiftLists operation.
+
+Summary for ../../docs/sre/runbooks/shiftsListsGeneralRunbook.md:
+This runbook provides information on recognizing and recovering from general issues that occur with shiftsLists operations.
+
+Summary for ../../docs/sre/runbooks/sinkerFailures.md:
+This document outlines a runbook for handling issues with Sinker failing to push events to the Ledger database, including how to recognize the issue and steps for recovery.
+
+Summary for ../../docs/sre/runbooks/sinkerNotProcessing.md:
+This document provides a runbook for handling situations where the sinker is not processing any new events due to various potential issues, including checking the Ledger Dashboard for no data, checking the logs for indications of problems, checking the CDC Source Connector, and ensuring that the sinker containers are running.
+
+Summary for ../../docs/sre/runbooks/sourceConnectorIsNotProducing.md:
+The CDC Source Connector responsible for loading core database contents into Kafka topics is not producing records, which can be recognized by the visible decrease in the count of records sent on the Ledger Dashboard and the connector appearing as down in Confluent, and to recover, you can check if the core app is running, verify that the core db is up and running with proper replication set up, and restart the connector either by using the restart button or by making a "change" in the connector settings and applying the changes.
+
+Summary for ../../docs/sre/runbooks/sqs/sqsQueueSizeIsHigh.md:
+This runbook provides steps to handle issues where the SQS queue size is too high, including recognizing the alert, checking error logs, purging the queue, and adjusting the scale of the worker queue.
+
+Summary for ../../docs/sre/runbooks/sqsDlqNotEmptyRunbook.md:
+This document provides a runbook for handling SQS DLQ messages, including steps to check logs for the originating queue's consumer, redrive events, polling messages in the queue, and purging the DLQ if necessary.
+
+Summary for ../../docs/sre/runbooks/tooMany5xxResponses.md:
+This runbook addresses cases where the Ledger service returns too many 5xx responses, including steps to recognize PagerDuty alerts and recover by checking deployments, logs, dashboard, and WAF logs.
+
+Summary for ../../docs/sre/runbooks/transfers/v1FirstTransfer.md:
+This runbook provides information on specific issues and recovery methods related to the v1FirstTransfer operation.
+
+Summary for ../../docs/sre/runbooks/transfers/v1TransferDetails.md:
+This runbook provides specific information on issues and recovery methods for the v1TransferDetails operation.
+
+Summary for ../../docs/sre/runbooks/transfersGeneralRunbook.md:
+This runbook provides guidance on recognizing and recovering from general issues that occur with transfer operations.
+
+Summary for: ../../docs/newDoc.md:
+The document is in working condition.
+
+Summary for: ../../docs/table_of_contents.md:
+The table of contents to enlist all the docs and their brief summaries inside the ledger service.
+
