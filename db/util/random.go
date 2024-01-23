@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"math/rand"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -19,6 +20,23 @@ func RandomInt(min, max int64) int64 {
 	return min + rand.Int63n(max-min+1)
 }
 
+// RandomNDigitNumber generates a random n digit number as a string.
+func RandomNDigitNumber(n int) string {
+	rand.Seed(time.Now().UnixNano()) // Seed the random number generator
+
+	// Ensure the first digit is not zero
+	firstDigit := rand.Intn(9) + 1
+	var sb strings.Builder
+	sb.WriteString(strconv.Itoa(firstDigit))
+
+	// Generate the remaining digits, which can include zero
+	for i := 1; i < n; i++ {
+		sb.WriteString(strconv.Itoa(rand.Intn(10)))
+	}
+
+	return sb.String()
+}
+
 func RandomString(n int) string {
 	var sb strings.Builder
 	k := len(alphabet)
@@ -29,6 +47,13 @@ func RandomString(n int) string {
 	}
 
 	return sb.String()
+}
+
+func RandomOtp(num int, str int) string {
+	intpart := RandomNDigitNumber(num)
+	strpart := RandomString(str)
+
+	return fmt.Sprintf(string(intpart) + strpart)
 }
 
 func RandomOwner() string {

@@ -10,8 +10,29 @@ Table users as U {
   hashed_password varchar [not null]
   full_name varchar [not null]
   email varchar [unique, not null]
+  is_email_verified bool [not null , default: false]
   password_change_at timestamptz [not null, default:'0001-01-01 00:00:00Z']
   created_at timestamptz [not null, default: `now()`]
+}
+
+Table verify_emails {
+    id bigserial [pk]
+    username varchar [ref: > U.username, not null]
+    email varchar [not null]
+    secret_code varchar [not null]
+    is_used bool [not null, default: false]
+    created_at timestamptz [not null, default: `now()`]
+    expired_at timestamptz [not null, default: `now() + interval '15 minutes'`]
+}
+
+Table otp_emails {
+    id bigserial [pk]
+    username varchar [ref: > U.username, not null]
+    email varchar [not null]
+    otp_sent varchar [not null]
+    total_otp_generations int [not null, default: 0]
+    created_at timestamptz [not null, default: `now()`]
+    expired_at timestamptz [not null, default: `now() + interval '15 minutes'`]
 }
 
 Table mentor {
