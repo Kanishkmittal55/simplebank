@@ -8,26 +8,29 @@ import (
 	db "github.com/kanishkmittal55/simplebank/db/sqlc"
 	"github.com/kanishkmittal55/simplebank/db/util"
 	"github.com/kanishkmittal55/simplebank/token"
+	"github.com/kanishkmittal55/simplebank/worker"
 )
 
 // Server serves HTTP request for our banking service.
 type Server struct {
-	config     util.Config
-	store      db.Store
-	tokenMaker token.Maker
-	router     *gin.Engine
+	config          util.Config
+	store           db.Store
+	tokenMaker      token.Maker
+	router          *gin.Engine
+	taskDistributor worker.TaskDistributor
 }
 
 // NewServer creates a new HTTP server instance and setup routing.
-func NewServer(config util.Config, store db.Store) (*Server, error) {
+func NewServer(config util.Config, store db.Store, taskDistributor worker.TaskDistributor) (*Server, error) {
 	tokenMaker, err := token.NewPasetoMaker(config.TokenSymmetricKey)
 	if err != nil {
 		return nil, fmt.Errorf("cannot create token : %w", err)
 	}
 	server := &Server{
-		config:     config,
-		store:      store,
-		tokenMaker: tokenMaker,
+		config:          config,
+		store:           store,
+		tokenMaker:      tokenMaker,
+		taskDistributor: taskDistributor,
 	}
 
 	// Custom Validator
@@ -52,6 +55,7 @@ func (server *Server) setupRouter() {
 	router.POST("/users", server.createUser)
 	router.POST("/users/login", server.loginUser)
 	router.POST("/token/renew_access", server.renewAccessToken)
+	router.POST("/users/forgot_password", server.forgotPassword)
 
 	authRoute := router.Group("/").Use(authMiddleware(server.tokenMaker))
 

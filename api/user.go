@@ -2,6 +2,9 @@ package api
 
 import (
 	"database/sql"
+	"fmt"
+	"github.com/hibiken/asynq"
+	"github.com/kanishkmittal55/simplebank/worker"
 	"net/http"
 	"time"
 
@@ -72,11 +75,6 @@ func (server *Server) createUser(ctx *gin.Context) {
 		return
 	}
 
-	//// So we are also adding an access Token
-	//accessToken, _, err := server.tokenMaker.CreateToken(
-	//	user.Username,
-	//	server.config.AccessTokenDuration,
-	//)
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
 		return
@@ -86,7 +84,7 @@ func (server *Server) createUser(ctx *gin.Context) {
 		Username:         user.Username,
 		FullName:         user.FullName,
 		Email:            user.Email,
-		PasswordChangeAt: user.PasswordChangeAt,
+		PasswordChangeAt: user.PasswordChangedAt,
 		CreatedAt:        user.CreatedAt,
 	}
 
@@ -241,4 +239,46 @@ func (server *Server) logoutUser(ctx *gin.Context) {
 		User:    session.Username,
 	}
 	ctx.JSON(http.StatusOK, rsp)
+}
+
+type ForgotPasswordRequest struct {
+	EmailId string `json:"email_id" binding:"required"`
+}
+
+type ForgotPasswordResponse struct {
+	MessageBody string `json:"message"`
+}
+
+func (server *Server) forgotPassword(ctx *gin.Context) {
+	var req ForgotPasswordRequest
+	if err := ctx.ShouldBindJSON(&req); err != nil {
+		ctx.JSON(http.StatusBadRequest, errorResponse(err))
+		return
+	}
+
+	user, err := server.store.GetUserByEmail(ctx, req.EmailId)
+	if err != nil {
+		ctx.JSON(http.StatusNotFound, errorResponse(err))
+		return
+	}
+
+	taskPayload := &worker.PayloadSendOtpEmail{
+		Username: user.Username,
+	}
+
+	opts := []asynq.Option{
+		asynq.MaxRetry(10),
+		asynq.ProcessIn(10 * time.Second),
+		asynq.Queue(worker.QueueCritical),
+	}
+
+	err = server.taskDistributor.DistributeTaskSendOtpEmail(ctx, taskPayload, opts...)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
+	}
+	resp := ForgotPasswordResponse{
+		MessageBody: fmt.Sprintf("Otp Email sent successfully"),
+	}
+	ctx.JSON(http.StatusOK, resp)
 }

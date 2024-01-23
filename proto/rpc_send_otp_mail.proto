@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package pb;
+option go_package = "github.com/kanishkmittal55/simplebank/pb";
+
+message SendOtpMailRequest {
+  string email_id = 1;
+}
+
+message SendOtpMailResponse {
+  string messageBody = 2;
+}

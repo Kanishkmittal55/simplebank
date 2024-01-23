@@ -47,6 +47,16 @@ type Mentor struct {
 	CreatedAt        time.Time      `json:"created_at"`
 }
 
+type OtpEmail struct {
+	ID                  int64     `json:"id"`
+	Username            string    `json:"username"`
+	Email               string    `json:"email"`
+	OtpSent             string    `json:"otp_sent"`
+	TotalOtpGenerations int32     `json:"total_otp_generations"`
+	CreatedAt           time.Time `json:"created_at"`
+	ExpiredAt           time.Time `json:"expired_at"`
+}
+
 type Session struct {
 	ID           uuid.UUID `json:"id"`
 	Username     string    `json:"username"`
@@ -68,10 +78,21 @@ type Transfer struct {
 }
 
 type User struct {
-	Username         string    `json:"username"`
-	HashedPassword   string    `json:"hashed_password"`
-	FullName         string    `json:"full_name"`
-	Email            string    `json:"email"`
-	PasswordChangeAt time.Time `json:"password_change_at"`
-	CreatedAt        time.Time `json:"created_at"`
+	Username          string    `json:"username"`
+	HashedPassword    string    `json:"hashed_password"`
+	FullName          string    `json:"full_name"`
+	Email             string    `json:"email"`
+	PasswordChangedAt time.Time `json:"password_changed_at"`
+	CreatedAt         time.Time `json:"created_at"`
+	IsEmailVerified   bool      `json:"is_email_verified"`
+}
+
+type VerifyEmail struct {
+	ID         int64     `json:"id"`
+	Username   string    `json:"username"`
+	Email      string    `json:"email"`
+	SecretCode string    `json:"secret_code"`
+	IsUsed     bool      `json:"is_used"`
+	CreatedAt  time.Time `json:"created_at"`
+	ExpiredAt  time.Time `json:"expired_at"`
 }
