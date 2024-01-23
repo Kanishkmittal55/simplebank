@@ -2,8 +2,10 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/hibiken/asynq"
 	db "github.com/kanishkmittal55/simplebank/db/sqlc"
 	"github.com/kanishkmittal55/simplebank/db/util"
+	"github.com/kanishkmittal55/simplebank/worker"
 	"github.com/stretchr/testify/require"
 	"os"
 	"testing"
@@ -18,7 +20,13 @@ func newTestServer(t *testing.T, store db.Store) *Server {
 		AccessTokenDuration: time.Minute,
 	}
 
-	server, err := NewServer(config, store)
+	redisOpt := asynq.RedisClientOpt{
+		Addr: config.RedisAddress,
+	}
+
+	taskPayload := worker.NewRedisTaskDistributor(redisOpt)
+
+	server, err := NewServer(config, store, taskPayload)
 	require.NoError(t, err)
 
 	return server

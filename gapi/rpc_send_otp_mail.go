@@ -21,7 +21,7 @@ func (server *Server) SendOtpMail(ctx context.Context, req *pb.SendOtpMailReques
 
 	result, err := server.store.GetUserByEmail(ctx, req.GetEmailId())
 	if err != nil {
-		return nil, status.Errorf(codes.Internal, "This email is not registered with us: ", req.GetEmailId())
+		return nil, status.Errorf(codes.Internal, "This email is not registered with us: %s", req.GetEmailId())
 	}
 
 	taskPayload := &worker.PayloadSendOtpEmail{
