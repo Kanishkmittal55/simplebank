@@ -26,7 +26,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: kanishkmittal55/simplebank-api:latest
+          tags: kanishkmittal55/simple-bank-backend:latest
           build-args: |
             DB_URL=${{ secrets.DB_URL }}
             REDIS_URL=${{ secrets.REDIS_URL }}
