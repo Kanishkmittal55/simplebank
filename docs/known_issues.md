@@ -1,0 +1,2 @@
+## Postgres Password Not Recognized Error
+So this is a known issue ,you can have any native installations of postgres on your local machine as that would interfere the user settings of the docker container , this issue was faced on 16/03/2024 and you resolved it using this link - https://www.reddit.com/r/docker/comments/ndxqsv/trying_to_run_migrate_with_postgres_but_keep/

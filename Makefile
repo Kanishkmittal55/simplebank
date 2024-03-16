@@ -18,19 +18,19 @@ down:
 startdb: postgres createdb migrateup
 
 postgres:
-	docker run --name postgres12 --network bank-network -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:12-alpine
+	docker run --name postgres15 --network bank-network -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:15
 
 createdb:
-	docker exec -it postgres12 createdb --username=root --owner=root simple_bank
+	docker exec -it postgres15 createdb --username=root --owner=root simple_bank
 
 dropdb:
-	docker exec -it postgres12 dropdb simple_bank
+	docker exec -it postgres15 dropdb simple_bank
 
 runRootDb:
-	docker exec -it postgres12 psql -U root simple_bank
+	docker exec -it postgres15 psql -U root simple_bank
 
 logs:
-	docker logs postgres12
+	docker logs postgres15
 
 migrateup:
 	 migrate -path db/migration -database "$(DB_URL)" -verbose up
