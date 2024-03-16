@@ -2,3 +2,6 @@
 2. Id used - ${DB_DOCS_ID}
 3. Password - ${DB_DOCS_PASSWORD}
 
+## Connecting Data Editor Like TablePlus to site credentials hosted on render.com 
+
+

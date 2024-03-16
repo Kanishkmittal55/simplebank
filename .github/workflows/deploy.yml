@@ -1,92 +1,32 @@
-name : Deploy to Production
+name: Deploy to Production
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
-
-  deploy:
-    name: Deploy to EC2
+  build-and-push:
+    name: Build and push Docker image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code into the Go Module directory
         uses: actions/checkout@v3
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          username: ${{ secrets.DH_USERNAME }}
+          password: ${{ secrets.PASSWORD }}
 
-      - name: Install Docker and Docker Compose on EC2
-        uses: appleboy/ssh-action@master
+      - name: Build and push
+        uses: docker/build-push-action@v2
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.EC2_PRIVATE_SSH_KEY }}
-          script: |
-            # Install Docker if not installed
-            if ! type docker >/dev/null 2>&1; then
-                sudo yum update -y
-                sudo yum -y install docker
-                sudo service docker start
-            fi
-            
-            # Install Docker Compose if not installed
-            if ! type docker-compose >/dev/null 2>&1; then
-                sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-                sudo chmod +x /usr/local/bin/docker-compose
-            fi
-
-      - name: Deploy on EC2
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.EC2_PRIVATE_SSH_KEY }}
-          script: |
-            #!/bin/bash
-            
-            # Navigate to the project directory
-            cd /home/ec2-user/github/simplebank
-            
-            # Check for updates in the Git repository
-            git fetch origin main
-            
-            # Check if there are differences between the local files and the remote repository
-            if git diff --quiet HEAD origin/main; then
-              echo "No changes in the repository. Skipping rebuild and cleanup."
-            else
-              echo "Changes detected. Pulling latest changes."
-            
-              # Pull the latest changes
-              git pull origin main
-            
-              # Stop the existing Docker Compose service
-              sudo systemctl stop simplebank.service
-            
-              # Remove all stopped containers
-              docker container prune -f
-            
-              # Remove all unused images, not just dangling ones
-              docker image prune -a -f
-
-              # Fetch the secret values and transform them into the env file format
-              aws secretsmanager get-secret-value --secret-id simple_bank --query SecretString --output text | jq -r 'to_entries|map("\(.key)=\(.value)")|.[]' > app.env
-            
-              # Rebuild and restart the Docker containers
-              # The systemd service will handle this
-              sudo systemctl start simplebank.service
-
-              # Wait for 5 minutes
-              echo "Waiting for 2 minutes for the service to stabilize..."
-              sleep 120
-
-              # Fetch and print the logs for the simplebank service
-              echo "Fetching service logs..."
-              LOGS=$(sudo journalctl -u simplebank.service --since "10 minutes ago")
-              echo "$LOGS"
-            fi
-
+          context: .
+          push: true
+          tags: kanishkmittal55/simplebank-api:latest
+          build-args: |
+            DB_URL=${{ secrets.DB_URL }}
+            REDIS_URL=${{ secrets.REDIS_URL }}
